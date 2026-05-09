@@ -1,0 +1,141 @@
+export const es = {
+  // General
+  app_name: "yana/pay",
+  app_tagline: "Donaciones transparentes para ONGs peruanas",
+  loading: "Cargando...",
+  save: "Guardar",
+  cancel: "Cancelar",
+  next: "Siguiente",
+  back: "Atrás",
+  submit: "Enviar",
+  connect_wallet: "Conectar Wallet",
+  disconnect: "Desconectar",
+  view_on_explorer: "Ver en Explorer",
+  copy_address: "Copiar dirección",
+  copied: "¡Copiado!",
+
+  // Roles
+  role_selection_title: "¿Cómo quieres participar?",
+  role_donor: "Quiero Donar",
+  role_donor_desc: "Apoya causas de ONGs y albergues peruanos",
+  role_org: "Soy una Organización",
+  role_org_desc: "ONG, albergue de animales u otra entidad sin fines de lucro",
+
+  // Donor registration
+  donor_type_title: "Tipo de persona",
+  donor_natural: "Persona Natural",
+  donor_natural_desc: "Registro con DNI",
+  donor_juridica: "Persona Jurídica",
+  donor_juridica_desc: "Empresa registrada con RUC",
+  full_name: "Nombre completo",
+  full_name_placeholder: "Ej: María García López",
+  dni: "DNI",
+  dni_placeholder: "12345678",
+  ruc: "RUC",
+  ruc_placeholder: "20123456789",
+  company_name: "Razón Social",
+  company_name_placeholder: "Ej: Empresa SAC",
+  legal_rep: "Representante Legal",
+  legal_rep_placeholder: "Ej: Juan Pérez",
+
+  // Org registration
+  org_name: "Nombre de la Organización",
+  org_name_placeholder: "Ej: Albergue Amigos de las Patas",
+  org_description: "Descripción",
+  org_description_placeholder: "Cuéntanos sobre tu organización y misión...",
+  org_logo: "URL del Logo",
+  org_logo_placeholder: "https://...",
+  org_banner: "URL del Banner",
+  org_banner_placeholder: "https://...",
+  social_media: "Redes Sociales",
+  social_web: "Sitio Web",
+  social_instagram: "Instagram",
+  social_facebook: "Facebook",
+  org_proof: "Comprobante de ONG",
+  org_proof_desc: "Sube el PDF o imagen de tu resolución de constitución como ONG sin fines de lucro. Será revisado por nuestro equipo.",
+  org_pending_notice: "Tu organización está pendiente de validación por nuestro equipo. Recibirás una notificación cuando sea aprobada.",
+  org_rejected_notice: "Tu solicitud fue rechazada. Contáctanos para más información.",
+
+  // Onboarding steps
+  onboarding_step1: "Rol",
+  onboarding_step2: "Datos",
+  onboarding_step3: "Confirmación",
+  onboarding_title: "Bienvenido a yana/pay",
+  onboarding_subtitle: "Completa tu registro para comenzar",
+  onboarding_success: "¡Registro exitoso!",
+  onboarding_success_desc: "Tu cuenta ha sido creada en la blockchain de Solana.",
+
+  // Marketplace
+  marketplace_title: "Organizaciones Verificadas",
+  marketplace_subtitle: "Apoya causas transparentes en Perú",
+  marketplace_empty: "No hay organizaciones registradas aún.",
+  marketplace_search: "Buscar organizaciones...",
+  marketplace_filter_all: "Todas",
+  verified_badge: "Verificada",
+  pending_badge: "Pendiente",
+
+  // Wishlist
+  wishlist_title: "Listas de Deseos",
+  wishlist_create: "Crear Lista",
+  wishlist_create_title: "Nueva Lista de Deseos",
+  wishlist_item_title: "Título",
+  wishlist_item_title_placeholder: "Ej: 10 sacos de croquetas para perros",
+  wishlist_description: "Descripción",
+  wishlist_description_placeholder: "Describe qué necesitas y para qué...",
+  wishlist_target: "Monto Objetivo (SOL)",
+  wishlist_target_placeholder: "Ej: 2.5",
+  wishlist_progress: "Progreso",
+  wishlist_raised: "Recaudado",
+  wishlist_goal: "Meta",
+  wishlist_donors: "donantes",
+  wishlist_donate: "Donar",
+  wishlist_donate_voluntary: "Donación Libre",
+  wishlist_status_active: "Activa",
+  wishlist_status_funded: "¡Meta Alcanzada!",
+  wishlist_status_completed: "Completada",
+  wishlist_status_cancelled: "Cancelada",
+  wishlist_submit_invoice: "Subir Factura/Boleta",
+  wishlist_invoice_uri: "URL de la Factura/Boleta",
+  wishlist_invoice_placeholder: "https://ipfs.io/...",
+
+  // Donation
+  donate_amount: "Monto a donar (SOL)",
+  donate_amount_placeholder: "0.1",
+  donate_confirm: "Confirmar Donación",
+  donate_success: "¡Donación exitosa!",
+  donate_tx: "Transacción confirmada en Solana",
+  donate_qr: "Pagar con QR (Solana Pay)",
+
+  // Dashboard (NGO)
+  dashboard_title: "Panel de mi Organización",
+  dashboard_total_received: "Total Recibido",
+  dashboard_wishlists: "Mis Listas de Deseos",
+  dashboard_upload_invoice: "Subir Comprobante",
+  dashboard_pending_release: "Fondos Pendientes de Liberación",
+
+  // Admin panel
+  admin_title: "Panel de Administración",
+  admin_orgs_pending: "Organizaciones Pendientes",
+  admin_validate: "Validar",
+  admin_reject: "Rechazar",
+  admin_invoices: "Facturas Pendientes de Revisión",
+  admin_release: "Liberar Fondos",
+  admin_reject_invoice: "Rechazar Factura",
+  admin_stats: "Estadísticas Globales",
+
+  // Errors
+  error_wallet_required: "Conecta tu wallet para continuar",
+  error_invalid_dni: "El DNI debe tener 8 dígitos",
+  error_invalid_ruc: "El RUC debe tener 11 dígitos",
+  error_required_field: "Este campo es obligatorio",
+  error_invalid_amount: "Monto inválido",
+  error_tx_failed: "La transacción falló. Intenta nuevamente.",
+
+  // Proof / Certificates
+  impact_cert: "Certificado de Impacto",
+  impact_cert_desc: "NFT comprimido emitido al completar la donación",
+  boleta: "Boleta",
+  factura: "Factura",
+} as const;
+
+export type TranslationKey = keyof typeof es;

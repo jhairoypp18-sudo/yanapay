@@ -1,0 +1,25 @@
+[package]
+name = "yanapay"
+version = "0.1.0"
+description = "yana/pay - Transparent fundraising for Peruvian NGOs on Solana"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "yanapay"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build"]
+init-if-needed = ["anchor-lang/init-if-needed"]
+
+[dependencies]
+anchor-lang = { version = "0.32.1", features = ["init-if-needed"] }
+
+[dev-dependencies]
+litesvm = "=0.7.1"
+solana-sdk = "2.3"

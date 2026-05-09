@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f8f9ff;
+  --foreground: #0a0a0f;
+  --primary: #9945ff;
+  --primary-foreground: #ffffff;
+  --neon: #14f195;
+  --neon-purple: #9945ff;
+  --neon-blue: #00d4ff;
+  --muted: #6b7280;
+  --muted-foreground: #6b7280;
+  --card: #ffffff;
+  --card-foreground: #0a0a0f;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0f;
+  --border: #e5e7eb;
+  --border-low: #f3f4f6;
+  --input: #e5e7eb;
+  --accent: #f3f4f6;
+  --accent-foreground: #111827;
+  --cream: #f3f4f6;
+  --destructive: #ef4444;
+  --destructive-foreground: #ef4444;
+  --ring: #9945ff;
+  --radius: 0.75rem;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #111827;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+.dark {
+  --background: #070711;
+  --foreground: #f0f0ff;
+  --primary: #9945ff;
+  --primary-foreground: #ffffff;
+  --neon: #14f195;
+  --neon-purple: #9945ff;
+  --neon-blue: #00d4ff;
+  --muted: #9ca3af;
+  --muted-foreground: #6b7280;
+  --card: #0e0e1a;
+  --card-foreground: #f0f0ff;
+  --popover: #0e0e1a;
+  --popover-foreground: #f0f0ff;
+  --border: #1e1e3a;
+  --border-low: rgba(30, 30, 58, 0.6);
+  --input: #1e1e3a;
+  --accent: #1a1a2e;
+  --accent-foreground: #f0f0ff;
+  --cream: #1a1a2e;
+  --destructive: #ef4444;
+  --destructive-foreground: #fca5a5;
+  --ring: #9945ff;
+  --secondary: #1a1a2e;
+  --secondary-foreground: #f0f0ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-border: var(--border);
+  --color-border-low: var(--border-low);
+  --color-input: var(--input);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-cream: var(--cream);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-ring: var(--ring);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@theme inline {
+  --color-neon: var(--neon);
+  --color-neon-purple: var(--neon-purple);
+  --color-neon-blue: var(--neon-blue);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background: rgba(153, 69, 255, 0.3);
+    color: var(--foreground);
+  }
+}
+
+@layer utilities {
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(20, 241, 149, 0.15), 0 0 40px rgba(20, 241, 149, 0.05);
+  }
+  .purple-glow {
+    box-shadow: 0 0 20px rgba(153, 69, 255, 0.2), 0 0 40px rgba(153, 69, 255, 0.08);
+  }
+  .gradient-border {
+    background: linear-gradient(var(--card), var(--card)) padding-box,
+      linear-gradient(135deg, #9945ff, #14f195) border-box;
+    border: 1px solid transparent;
+  }
+  .skeleton {
+    @apply animate-pulse rounded-lg bg-accent;
+  }
+}
+
+@layer components {
+  .input-base {
+    @apply w-full rounded-lg border border-border-low bg-accent/50 px-3 py-2 text-sm text-foreground placeholder:text-muted/60 transition focus:border-neon-purple focus:outline-none focus:ring-2 focus:ring-neon-purple/20;
+  }
+
+  .btn-primary {
+    @apply inline-flex cursor-pointer items-center justify-center rounded-lg bg-gradient-to-r from-neon-purple to-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:opacity-90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex cursor-pointer items-center justify-center rounded-lg border border-border-low px-4 py-2 text-sm font-medium text-foreground transition hover:bg-accent disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex cursor-pointer items-center justify-center rounded-lg px-3 py-1.5 text-sm text-muted transition hover:bg-accent hover:text-foreground;
+  }
+
+  .badge-verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 9999px;
+    background-color: rgba(20, 241, 149, 0.1);
+    padding: 0.125rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--neon);
+  }
+
+  .badge-pending {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 9999px;
+    background-color: rgba(234, 179, 8, 0.1);
+    padding: 0.125rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #eab308;
+  }
+
+  .badge-funded {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 9999px;
+    background-color: rgba(153, 69, 255, 0.1);
+    padding: 0.125rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--neon-purple);
+  }
+
+  .card-base {
+    @apply rounded-2xl border border-border-low bg-card p-5 transition;
+  }
+
+  .card-hover {
+    @apply rounded-2xl border border-border-low bg-card p-5 transition hover:border-neon-purple/30 hover:shadow-lg;
+  }
+}
